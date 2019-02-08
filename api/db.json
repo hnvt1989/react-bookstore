@@ -1,0 +1,33 @@
+{
+  "books": [
+    {
+      "title": "Harry Porter",
+      "description": "book 1",
+      "id": 1,
+      "userId": ""
+    },
+    {
+      "title": "Other book",
+      "description": "Here's some books",
+      "id": 2,
+      "userId": ""
+    },
+    {
+      "name": "test2",
+      "description": "test3",
+      "items": [],
+      "userId": "112450104384688887132",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "id": "112450104384688887132",
+      "books": [3]
+    },
+    {
+      "id": "112450104384688887133",
+      "books": []
+    }
+  ]
+}
