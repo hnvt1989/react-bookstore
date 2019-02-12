@@ -1,27 +1,16 @@
 import React from "react";
-import { Provider, connect } from "react-redux";
-import configureMockStore from "redux-mock-store";
+import { Provider } from "react-redux";
 import { render, fireEvent, cleanup } from "react-testing-library";
-//import { createStore } from "redux";
-import { shallow } from "enzyme";
 import {BrowserRouter} from 'react-router-dom';
 
-import Adapter from "enzyme-adapter-react-16";
-import Enzyme from "enzyme";
 import BookList from "../components/books/BookList";
-
 import bookReducer from "../reducers/bookReducer";
-
-const mockStore = configureMockStore();
-const store = mockStore({});
 
 import { createStore, applyMiddleware, compose } from 'redux';
 import reduxThunk from 'redux-thunk';
 
+//middleware to use redux with async
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-//disableLifecycleMethods is auto set to True in Enzyme 3
-Enzyme.configure({ adapter: new Adapter(), disableLifecycleMethods: true });
 
 function renderWithRedux(
   ui,
@@ -45,35 +34,38 @@ function renderWithRedux(
 afterEach(cleanup);
 
 test("<BookList> can render with redux with custom initial state", () => {
-  const { getByTestId, getByText } = renderWithRedux(<BookList />, {
-    initialState: {
-      books: [
-        {
-          title: "Harry Porter",
-          description: "book 1",
-          id: 1,
-          userId: ""
-        },
-        {
-          title: "Other book",
-          description: "Here's some books",
-          id: 2,
-          userId: ""
-        },
-        {
-          name: "test2",
-          description: "test3",
-          items: [],
-          userId: "112450104384688887132",
-          id: 3
-        }
-      ],
-      auth: {
-        userId: "112450104384688887132"
+  const initialState = {
+    books: [
+      {
+        title: "Harry Porter",
+        description: "book 1",
+        id: 1,
+        userId: ""
       },
-      isSignedIn: true
-    }
+      {
+        title: "Other book",
+        description: "Here's some books",
+        id: 2,
+        userId: ""
+      },
+      {
+        name: "test2",
+        description: "test3",
+        items: [],
+        userId: "112450104384688887132",
+        id: 3
+      }
+    ],
+    auth: {
+      userId: "112450104384688887132"
+    },
+    isSignedIn: true
+  };
+
+  const { getByTestId, getByText , store} = renderWithRedux(<BookList />, {
+    initialState: initialState
   });
 
   expect(getByTestId("header").textContent).toBe("Books");
+  expect(store.getState()).toBe(initialState);
 });

@@ -16,7 +16,7 @@ Enzyme.configure({ adapter: new Adapter(), disableLifecycleMethods: true });
 
 //use jest -u to update the snapshot
 //using react-render + jest snapshot feature
-xtest("Book Create component", () => {
+test("Book Create component", () => {
   const tree = renderer
     .create(
       <Provider store={store}>
@@ -28,7 +28,7 @@ xtest("Book Create component", () => {
 });
 
 //use enzyme shallow render
-xtest("Book create component ", () => {
+test("Book create component ", () => {
   const bookCreateComponent = shallow(
     <Provider store={store}>
       <BookCreate />
