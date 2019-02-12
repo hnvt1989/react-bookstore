@@ -62,3 +62,66 @@ exports[`Book Create component 1`] = `
   </form>
 </div>
 `;
+
+exports[`Books Listing 1`] = `
+<div>
+  <h3>
+    Create a Book
+  </h3>
+  <form
+    className="ui form error"
+    onSubmit={[Function]}
+  >
+    <div
+      className="field "
+    >
+      <label>
+        Enter Name
+      </label>
+      <input
+        autoComplete="off"
+        name="name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onDragStart={[Function]}
+        onDrop={[Function]}
+        onFocus={[Function]}
+        value=""
+      />
+    </div>
+    <div
+      className="field "
+    >
+      <label>
+        Enter Description
+      </label>
+      <input
+        autoComplete="off"
+        name="description"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onDragStart={[Function]}
+        onDrop={[Function]}
+        onFocus={[Function]}
+        value=""
+      />
+    </div>
+    <div>
+      <div
+        className="ui button"
+        onClick={[Function]}
+      >
+        Add Item
+      </div>
+      <br />
+    </div>
+    <div>
+      <button
+        className="ui button primary"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+`;
