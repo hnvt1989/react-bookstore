@@ -1,6 +1,6 @@
 Simple BookStore web app written with React
 
-Unit testsing with react-testing-library and Enzyme.
+Unit testsing with react-testing-library and Enzyme, using Jest for testing framework and runner.
 
 Instructions:
 
