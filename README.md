@@ -1,20 +1,12 @@
-﻿# react-wishlist
- demo: http://ec2-52-27-123-98.us-west-2.compute.amazonaws.com:3000/
- 
- Simple online wish list. 
- Uses:
- 1. React-Redux for FRONTEND.
- 2. Go-lang for Rest API BACKEND
- 3. Mongodb for db storage
- 4. Google oAuth for login authentication
- 
- TODO: 
- - make wish sharing available to friends
- - send wish list via email
- - web-crawler to find discounts on wish items ?
- - email sharing friends about the discount on your wish list
+Simple BookStore web app written with React
 
- BUG:
- - after EDIT the list renders but with errors on console (something weird with list prop 'key')
- - Delete invalid Wish object throwing error in the rest api server
- 
+Unit testsing with react-testing-library and Enzyme, using Jest for testing framework and runner.
+
+Instructions:
+
+1. do npm install when in both api and client directory. This app uses the JSON server to mock the REST API calls.
+2. do npm start when in api directory to start the JSON server.
+3. do npm start when in the client directory to start the client
+4. the web app use Google Authentication to log in, so make sure the client ID has API access to the Google Auth.
+
+
